@@ -105,3 +105,56 @@ public class ForceGUI {
       });
    }
 }
+import java.util.Scanner;
+
+public class WorkDone {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      double force, displacement, workDone;
+      
+      System.out.print("Enter force (N): ");
+      force = sc.nextDouble();
+      
+      System.out.print("Enter displacement (m): ");
+      displacement = sc.nextDouble();
+      
+      workDone = force * displacement;
+      
+      System.out.println("Work done = " + workDone + " J");
+   }
+}
+import javax.swing.*;
+
+public class WorkDoneGUI {
+   public static void main(String[] args) {
+      JFrame frame = new JFrame("Work Done Calculator");
+      JPanel panel = new JPanel();
+      JLabel forceLabel = new JLabel("Enter force (N):");
+      JTextField forceField = new JTextField(10);
+      JLabel displacementLabel = new JLabel("Enter displacement (m):");
+      JTextField displacementField = new JTextField(10);
+      JButton calculateButton = new JButton("Calculate");
+      JLabel resultLabel = new JLabel("Work done = ");
+      JTextField resultField = new JTextField(10);
+      resultField.setEditable(false);
+      
+      panel.add(forceLabel);
+      panel.add(forceField);
+      panel.add(displacementLabel);
+      panel.add(displacementField);
+      panel.add(calculateButton);
+      panel.add(resultLabel);
+      panel.add(resultField);
+      
+      frame.add(panel);
+      frame.pack();
+      frame.setVisible(true);
+      
+      calculateButton.addActionListener(event -> {
+         double force = Double.parseDouble(forceField.getText());
+         double displacement = Double.parseDouble(displacementField.getText());
+         double workDone = force * displacement;
+         resultField.setText(Double.toString(workDone) + " J");
+      });
+   }
+}
