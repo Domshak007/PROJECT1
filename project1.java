@@ -179,4 +179,57 @@ public class ElectricPotentialEnergy {
       
       System.out.println("Electric potential energy = " + electricPotentialEnergy + " J");
    }
+}import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ElectricPotentialGUI implements ActionListener {
+    
+    JTextField textField1, textField2, textField3;
+    JButton button;
+    JLabel label;
+    
+    public ElectricPotentialGUI() {
+        
+        JFrame frame = new JFrame("Electric Potential Calculator");
+        frame.setLayout(new FlowLayout());
+        frame.setSize(350, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        textField1 = new JTextField("Enter charge (in Coulombs)", 20);
+        textField2 = new JTextField("Enter distance (in meters)", 20);
+        textField3 = new JTextField("Enter voltage (in volts)", 20);
+        button = new JButton("Calculate Electric Potential");
+        label = new JLabel("");
+        
+        button.addActionListener(this);
+        
+        frame.add(textField1);
+        frame.add(textField2);
+        frame.add(textField3);
+        frame.add(button);
+        frame.add(label);
+        
+        frame.setVisible(true);
+        
+    }
+    
+    public void actionPerformed(ActionEvent e) {
+        
+        double charge = Double.parseDouble(textField1.getText());
+        double distance = Double.parseDouble(textField2.getText());
+        double voltage = Double.parseDouble(textField3.getText());
+        
+        double electricPotential = voltage * distance / charge;
+        
+        label.setText("The electric potential is: " + electricPotential + " volts");
+        
+    }
+    
+    public static void main(String[] args) {
+        
+        new ElectricPotentialGUI();
+        
+    }
 }
+
