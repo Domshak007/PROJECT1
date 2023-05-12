@@ -158,3 +158,25 @@ public class WorkDoneGUI {
       });
    }
 }
+import java.util.Scanner;
+
+public class ElectricPotentialEnergy {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      double charge1, charge2, distance, electricPotentialEnergy, k;
+      
+      System.out.print("Enter charge 1 (C): ");
+      charge1 = sc.nextDouble();
+      
+      System.out.print("Enter charge 2 (C): ");
+      charge2 = sc.nextDouble();
+      
+      System.out.print("Enter distance between charges (m): ");
+      distance = sc.nextDouble();
+      
+      k = 8.99e9; // Coulomb's constant
+      electricPotentialEnergy = k * charge1 * charge2 / distance;
+      
+      System.out.println("Electric potential energy = " + electricPotentialEnergy + " J");
+   }
+}
