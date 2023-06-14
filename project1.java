@@ -232,4 +232,66 @@ public class ElectricPotentialGUI implements ActionListener {
         
     }
 }
+public class VelocityCalculator {
+    public static double calculateVelocity(double initialVelocity, double acceleration, double time) {
+        double velocity = initialVelocity + acceleration * time;
+        return velocity;
+    }
+    
+    public static double calculateDisplacement(double initialVelocity, double acceleration, double time) {
+        double displacement = initialVelocity * time + 0.5 * acceleration * time * time;
+        return displacement;
+    }
+    
+    public static double calculateTime(double initialVelocity, double acceleration, double velocity) {
+        double time = (velocity - initialVelocity) / acceleration;
+        return time;
+    }
+    
+    public static void main(String[] args) {
+        double initialVelocity = 10.0;
+        double acceleration = 2.0;
+        double time = 5.0;
+        
+        double velocity = calculateVelocity(initialVelocity, acceleration, time);
+        double displacement = calculateDisplacement(initialVelocity, acceleration, time);
+        double calculatedTime = calculateTime(initialVelocity, acceleration, velocity);
+        
+        System.out.println("Velocity: " + velocity);
+        System.out.println("Displacement: " + displacement);
+        System.out.println("Time: " + calculatedTime);
+    }
+}
+public class VelocityCalculator {
+    public static double calculateVelocity(double initialVelocity, double acceleration, double time) {
+        double velocity = initialVelocity + acceleration * time;
+        return velocity;
+    }
+    
+    public static double calculateDisplacement(double initialVelocity, double acceleration, double time) {
+        double displacement = initialVelocity * time + 0.5 * acceleration * time * time;
+        return displacement;
+    }
+    
+    public static double calculateTime(double initialVelocity, double acceleration, double velocity) {
+        double time = (velocity - initialVelocity) / acceleration;
+        return time;
+    }
+    
+    public static void main(String[] args) {
+        double initialVelocity = 10.0;
+        double acceleration = 2.0;
+        double time = 5.0;
+        
+        double velocity = calculateVelocity(initialVelocity, acceleration, time);
+        double displacement = calculateDisplacement(initialVelocity, acceleration, time);
+        double calculatedTime = calculateTime(initialVelocity, acceleration, velocity);
+        
+        System.out.println("Velocity: " + velocity);
+        System.out.println("Displacement: " + displacement);
+        System.out.println("Time: " + calculatedTime);
+    }
+}
+
+
 
